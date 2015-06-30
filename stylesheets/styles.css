@@ -18,6 +18,7 @@ p, ul, ol, table, pre, dl {
 
 h1, h2, h3 {
   line-height:1.1;
+  color: #6d6d6d;
 }
 
 h1 {
@@ -99,6 +100,9 @@ header {
   width:270px;
   float:left;
   position:fixed;
+}
+header h1 {
+  color: #6d6d6d;
 }
 
 header ul {
@@ -252,4 +256,8 @@ footer {
     font-size:12pt;
     color:#444;
   }
+}
+
+#container {
+  text-shadow: none;
 }
