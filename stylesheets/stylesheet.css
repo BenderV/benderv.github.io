@@ -1,6 +1,13 @@
 header {
   text-align: center;
 }
+.header {
+  color: #000;
+}
+.header:hover {
+  text-decoration: none;
+  color: #000;
+}
 
 .code {
   background: #303030;
@@ -20,4 +27,8 @@ pre {
 
 h3 {
   margin-top: 2rem;
+}
+.graph h2 {
+  margin-top: 2rem;
+  text-align: center;
 }
