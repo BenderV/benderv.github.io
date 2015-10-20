@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>Lovely sister</title>
+  <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css" rel="stylesheet" type="text/css" >
+  <style type="text/css">
+    body {
+      font-family: 'Indie Flower';
+      font-family: 'Tangerine', cursive;
+      font-size: 4rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 100px;
+      padding-bottom: 100px;
+    }
+    #closeLetter {
+      margin-left: auto;
+      margin-right: auto;
+      width: 256px;
+      margin-top: calc(50vh - 128px)
+    }
+    #closeLetter img {
+      width: 100%;
+    }
+    #closeLetter img:hover {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div id="closeLetter">
+  <img src="letter.svg" onclick="openLetter()">
+</div>
+
+<div id="letter" class="tlt" data-in-effect="fadeIn" style="display: none">
+    <p>Chère Sister,</p>                                                          <p>Encore une année de gagner! Nous formons une sacrée équipe! Chaque année, on est plus beau, plus grand, plus fort. Beaucoup diront que c'est un coup de chance, et ils n'auront pas tôrt. Mais comme le dis bien notre chèr père, “la chance, ça se provoque”.                                  Cette année n'a pas été facile. Ton absence, ou plutôt la mienne s'est fait ressentir. À l'occassion, essayons de s'organiser des trucs ensemble! Nous avons la chance de naître avec l'autre à nos côtés, gardons cette chance et provoquons là!                                                    
+    On ne chance pas une équipe qui gagne.                            
+        Joyeux Anniversaire Alicia,                                                                      Ton jumeau, Ben.
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FitText.js/1.2.0/jquery.fittext.min.js"></script>
+<script src="textillate/jquery.textillate.js"></script>
+<script type="text/javascript">
+  $(function () {
+      $('.tlt').textillate({
+        autoStart: false,
+        in: {
+          delay: 50,
+        },
+      });
+  });
+
+  function openLetter() {
+    $('#closeLetter').hide();
+    $('#letter').show();
+    $('#letter').textillate('start');
+  };
+
+</script>
+</body>
+</html>
