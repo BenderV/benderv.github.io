@@ -285,3 +285,10 @@ footer {
   }
 }
 */
+
+img.avatar {
+    border-radius: 50%;
+    width: 120px;
+    float: left;
+    margin: 7px;
+}
