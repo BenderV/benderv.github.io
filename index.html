@@ -3,49 +3,129 @@
 <head>
   <link rel="icon" href="data/favicon.png">
   <link rel="icon" href="data/favicon.svg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BenderV</title>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <style type="text/css">
-    body {
-      font-family: "helvetica neue";
+    body p, h1, h2, h3, a, li, ul {
+      font-family: 'Open Sans', "helvetica neue", 'Lora', sans-serif;
     }
 
+    /* TOP DYNAMIC COLOR */
+    body{
+       padding: 0px;
+       margin: 0px;
+
+     }
+
+    #gradient
+    {
+      width: 100%;
+      padding: 0px;
+      margin: 0px;
+      text-align: center;
+      color: white;
+    }
+    #gradient h1 {
+      margin: 1em 0;
+      padding: 
+    }
+    /* ENDTOP */
+
+    /* BLOCKQUOTE */ 
+    blockquote {
+      border-left: 10px solid;
+      margin: 1.5em 10px;
+      padding: 0.5em 10px;
+      quotes: "\201C""\201D""\2018""\2019";
+    }
+    blockquote:before {
+      content: open-quote;
+      font-size: 3em;
+      line-height: 0.1em;
+      margin-right: 0.25em;
+      vertical-align: -0.4em;
+    }
+    blockquote:after {
+      content: close-quote;
+      font-size: 0;
+    }
+    blockquote p {
+      display: inline;
+    }
+    /* END BLOCKQUOTE */
+
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 </head>
 <body>
-<h1>Benjamin Derville</h1>
-<h3>About me</h3>
-<p>
-<p>I have professional experience in full stack development. Over the past years, I focused my work on machine learning. I enjoy and follow the development of machine learning since 5 years and find it increasingly interesting and full of potential!<br/>
-I'm looking to join an early-stage startup working in this domain hoping to help implementing and improving the machine learning systems and contribute to development of any back-end/front-end applications if needed.<br/>
-Contact me by mail or on twitter !</p>
 
-<h3>Interesting Projects</h3>
-<ul>
-  <li><a href="https://github.com/BenderV/self_driving_car">Self-driving car</a>, a mini self-driving car. <a href="https://olympe.quip.com/oDncAFFJdbRC"><i style="color:#e91e63;">[Report]</i></a></li>
-  <li><span style="color:black">Outliers</span>, a sport prediction algorithm to bet online <i style="color:#e91e63;">(unpublished)</i></li>
-  <li><a href="https://github.com/BenderV/PrisonerDilemma">Prisoner's dilemma</a>, Finding Game Theory equilibrium with machine learning agents using the prisoner's dilemma</li>
-  <li><a href="http://travel.benderv.com/">UTTravel</a>, website to help students to find a school abroad</li>
-  <li><a href="https://github.com/BenderV/pyorg">Pyorg</a>, small library to organize files with scripts.</li>
-  <li><a href="/gps">GPS</a>, jupyter notebook with analysis of GPS data <a href="https://github.com/BenderV/GPS">(arduino code)</a> </li>
-</ul>
+<div class="pure-g">
+  <div id="gradient">
+    <div class="pure-u-1-1"> 
+      <h1>Benjamin Derville</h1>
+    </div>
+  </div>
+  
+  <div class="pure-u-1-5"></div>  
+  <div class="pure-u-3-5">
+
+    <h3>About me</h3>
+    <p>
+    <p>I have professional experience in <b>full stack development</b>. Over the past years, I focused my work on <b>data science & deep learning</b>. I enjoy and follow the development of machine learning since 5 years and find it increasingly interesting and full of potential!<br/>
+    I'm <b>looking to join a startup</b> working in this domain hoping to help implementing and improving the machine learning systems and contribute to development of any back-end/front-end applications if needed.<br/>
+    Contact me by <a href="mailto:benderville@gmail.com">mail</a>  or on <a href="https://twitter.com/ben_derv">twitter</a> !</p>
+
+    <h3>Interesting Projects</h3>
+    <ul>
+      <li><a href="https://github.com/BenderV/self_driving_car">Self-driving car</a>, a mini self-driving car. <a href="https://olympe.quip.com/oDncAFFJdbRC"><i style="color:#e91e63;">[Report]</i></a></li>
+      <li><span style="color:black">Outliers</span>, a sport prediction algorithm to bet online <i style="color:#e91e63;">(unpublished)</i></li>
+      <li><a href="https://github.com/BenderV/PrisonerDilemma">Prisoner's dilemma</a>, Finding Game Theory equilibrium with machine learning agents using the prisoner's dilemma</li>
+      <li><a href="http://travel.benderv.com/">UTTravel</a>, website to help students to find a school abroad</li>
+      <li><a href="https://github.com/BenderV/pyorg">Pyorg</a>, small library to organize files with scripts.</li>
+      <li><a href="/gps">GPS</a>, jupyter notebook with analysis of GPS data <a href="https://github.com/BenderV/GPS">(arduino code)</a> </li>
+    </ul>
 
 
-<h3>Contact</h3>
-<ul>
-  <li>Mail : <a href="mailto:benderville@gmail.com">benderville@gmail.com</a></li>
-  <li>Github : <a href="https://github.com/BenderV">github.com/BenderV</a></li>
-  <li>CV : <a href="files/cv-benjaminderville.pdf"> curriculum vitae (pdf)</a></li>
-  <li>Twitter : <a href="https://twitter.com/ben_derv">twitter.com/ben_derv</a></li>
-</ul>
+    <h3>Contact</h3>
+    <ul>
+      <li>Mail : <a href="mailto:benderville@gmail.com">benderville@gmail.com</a></li>
+      <li>Github : <a href="https://github.com/BenderV">github.com/BenderV</a></li>
+      <li>CV : <a href="files/cv-benjaminderville.pdf"> curriculum vitae (pdf)</a></li>
+      <li>Twitter : <a href="https://twitter.com/ben_derv">twitter.com/ben_derv</a></li>
+    </ul>
 
 
-<h3>FAQ</h3>
-<ul>
-  <li>CONTEXT: I need to do a 6 months internship for my school. After that, I don't go back to school, I will be graduate and can continue in the company.</li>
-  <li>VISA: No VISA sponsorship is needed. For USA, I take charge of the J1 process (can last at least 1 year).</li>
-  <li>TIME: I'm pretty flexible in the starting date of the internship, but the sooner, the better.</li>
-</ul>
+    <h3>FAQ</h3>
+    <ul>
+      <li>CONTEXT: I need to do a 6 months internship for my school. After that, I don't go back to school, I will be graduate and can continue in the company.</li>
+      <li>VISA: No VISA sponsorship is needed. For USA, I take charge of the J1 process (can last at least 1 year).</li>
+      <li>TIME: I'm pretty flexible in the starting date of the internship, but the sooner, the better.</li>
+    </ul>
 
+    <h3>Quotes</h3>
+    <blockquote>
+      <p>I very much recommend you get Benjamin on your team; he interned at Wiredcraft and was a pleasure to work with. He was in charge of a small part of our software platform for the election of Myanmar (https://wiredcraft.com/blog/myanmar-election-open-api/).
+      <br/>
+      He's wicked smart, "full-stack", nerdy and most importantly self driven. I'd get him back on my team any time.</p>
+      <footer>
+       - <cite>Ronan Berder, CEO of Wiredcraft</cite>
+      </footer>
+    </blockquote>    
+    <blockquote>
+      <p>I'm a very good friend of Benjamin and he knows how to handle complicated tasks and is very passionate about his (many) projects. He did a lot of online classes and tried a many different technologies. And as a side note, he is also a very cool guy, have fun working with him.</p>
+      <footer>
+       - <cite>Dorian Marié, Nomad Programmer</cite>
+      </footer>
+    </blockquote>
+
+  </div>
+
+  <div class="pure-u-1-5"></div>
+
+</div>
 </body>
 <script type="text/javascript">
   var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
@@ -57,4 +137,69 @@ Contact me by mail or on twitter !</p>
   pageTracker._trackPageview();
   } catch(err) {}
 </script>
+<script type="text/javascript">
+
+  var colors = new Array(
+    [62,35,255],
+    [60,255,60],
+    [255,35,98],
+    [45,175,230],
+    [255,0,255],
+    [255,128,0]);
+
+  var step = 0;
+  //color table indices for: 
+  // current color left
+  // next color left
+  // current color right
+  // next color right
+  var colorIndices = [0,1,2,3];
+
+  //transition speed
+  var gradientSpeed = 0.002;
+
+  function updateGradient()
+  {
+    
+    if ( $===undefined ) return;
+    
+  var c0_0 = colors[colorIndices[0]];
+  var c0_1 = colors[colorIndices[1]];
+  var c1_0 = colors[colorIndices[2]];
+  var c1_1 = colors[colorIndices[3]];
+
+  var istep = 1 - step;
+  var r1 = Math.round(istep * c0_0[0] + step * c0_1[0]);
+  var g1 = Math.round(istep * c0_0[1] + step * c0_1[1]);
+  var b1 = Math.round(istep * c0_0[2] + step * c0_1[2]);
+  var color1 = "rgb("+r1+","+g1+","+b1+")";
+
+  var r2 = Math.round(istep * c1_0[0] + step * c1_1[0]);
+  var g2 = Math.round(istep * c1_0[1] + step * c1_1[1]);
+  var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
+  var color2 = "rgb("+r2+","+g2+","+b2+")";
+
+   $('#gradient').css({
+     background: "-webkit-gradient(linear, left top, right top, from("+color1+"), to("+color2+"))"}).css({
+      background: "-moz-linear-gradient(left, "+color1+" 0%, "+color2+" 100%)"});
+    
+    step += gradientSpeed;
+    if ( step >= 1 )
+    {
+      step %= 1;
+      colorIndices[0] = colorIndices[1];
+      colorIndices[2] = colorIndices[3];
+      
+      //pick two new target color indices
+      //do not pick the same as the current one
+      colorIndices[1] = ( colorIndices[1] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
+      colorIndices[3] = ( colorIndices[3] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
+      
+    }
+  }
+
+  setInterval(updateGradient,10);
+
+</script>
+
 </html>
