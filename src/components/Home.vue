@@ -5,7 +5,7 @@
     <h3>About me</h3>
     <br/>
     <p>Engineer. Expertise in Tech, Data Science, Deep Learning.<br/></p>
-    <p>I'm interested in Mobility, Biology & IA.</p>
+    <p>I'm interested in Mobility, Biology & AI.</p>
 
     <h3>Experiences</h3>
     <ul>
