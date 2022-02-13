@@ -1,0 +1,676 @@
+<!doctype html>
+<html><head><title>Rapport IF23</title><meta charset="UTF-8"><link href="http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700,700italic|Roboto:400,700,700italic,400italic" type="text/css" rel="stylesheet"><style>/*
+ * Copyright 2014 Quip
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may
+ * not use this file except in compliance with the License. You may obtain
+ * a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations
+ * under the License.
+ */
+
+body {
+    font-size: 15px;
+    color: #333;
+    background: #fff;
+    padding: 60px 95px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern";
+    font-kerning: normal;
+    -moz-font-feature-settings: "kern";
+    -webkit-font-feature-settings: "kern";
+}
+
+/* Headings */
+h1, h2, h3, th {
+    font-family: Roboto, sans-serif;
+    font-weight: 700;
+    margin: 0;
+    margin-top: 1.25em;
+    margin-bottom: 0.75em;
+}
+
+h1 {
+    font-size: 35px;
+    line-height: 42px;
+}
+
+h1:first-child {
+    margin-top: 0;
+}
+
+h2 {
+    font-size: 18px;
+    line-height: 22px;
+}
+
+h3 {
+    text-transform: uppercase;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+/* Body text */
+body, p, ul, ol, td {
+    font-family: 'Crimson Text', serif;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+blockquote, q {
+    display: block;
+    margin: 1em 0;
+    font-style: italic;
+}
+
+blockquote a, q a {
+    text-decoration: underline;
+}
+
+blockquote {
+    padding-left: 10px;
+    border-left: 4px solid #a6a6a6;
+}
+
+q {
+    color: #a6a6a6;
+    line-height: 40px;
+    font-size: 24px;
+    text-align: center;
+    quotes: none;
+}
+
+q a {
+    color: #a6a6a6;
+}
+
+code, pre {
+    font-family: Consolas, "Liberation Mono", Menlo, "Courier Prime Web", Courier, monospace;
+    background: #f3f3f3;
+}
+
+code {
+    padding: 1px;
+    margin: 0 -1px;
+    border-radius: 3px;
+}
+
+pre {
+    display: block;
+    line-height: 20px;
+    text-shadow: 0 1px white;
+    padding: 5px 5px 5px 30px;
+    white-space: nowrap;
+    position: relative;
+    margin: 1em 0;
+}
+
+pre:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 15px;
+    border-left: solid 1px #dadada;
+}
+
+/* Lists */
+div[data-section-style="5"],
+div[data-section-style="6"],
+div[data-section-style="7"] {
+    margin: 12px 0;
+}
+
+ul {
+    padding: 0 0 0 40px;
+}
+
+ul li {
+    margin-bottom: 0.4em;
+}
+
+/* Bulleted list */
+div[data-section-style="5"] ul {
+    list-style-type: disc;
+}
+div[data-section-style="5"] ul ul {
+    list-style-type: circle;
+}
+div[data-section-style="5"] ul ul ul {
+    list-style-type: square;
+}
+div[data-section-style="5"] ul ul ul ul {
+    list-style-type: disc;
+}
+div[data-section-style="5"] ul ul ul ul ul {
+    list-style-type: circle;
+}
+div[data-section-style="5"] ul ul ul ul ul ul {
+    list-style-type: square;
+}
+
+/* Numbered list */
+div[data-section-style="6"] ul {
+    list-style-type: decimal;
+}
+div[data-section-style="6"] ul ul {
+    list-style-type: lower-alpha;
+}
+div[data-section-style="6"] ul ul ul {
+    list-style-type: lower-roman;
+}
+div[data-section-style="6"] ul ul ul ul {
+    list-style-type: decimal;
+}
+div[data-section-style="6"] ul ul ul ul ul {
+    list-style-type: lower-alpha;
+}
+div[data-section-style="6"] ul ul ul ul ul ul {
+    list-style-type: lower-roman;
+}
+
+/* Checklist */
+div[data-section-style="7"] ul {
+    list-style-type: none;
+}
+
+div[data-section-style="7"] ul li:before {
+    content: "\2610";
+    position: absolute;
+    display: inline;
+    margin-right: 1.2em;
+    margin-left: -1.2em;
+}
+
+div[data-section-style="7"] ul li.parent:before {
+    content: "";
+}
+
+div[data-section-style="7"] ul li.parent {
+    font-weight: bold;
+}
+
+div[data-section-style="7"] ul li.checked {
+    text-decoration: line-through;
+}
+
+div[data-section-style="7"] ul li.checked:before {
+    content: "\2611";
+    text-decoration: none;
+}
+
+/* Tables */
+div[data-section-style="8"] {
+    margin: 12px 0;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: separate;
+    border: solid 1px #7c7c7c;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .25);
+    table-layout: fixed;
+    position: relative;
+}
+
+table th, table td {
+    padding: 2px 2px 0;
+    min-width: 1.5em;
+    word-wrap: break-word;
+}
+
+table th {
+    border-bottom: 1px solid #ccc;
+    background: #f0f0f0;
+    font-weight: bold;
+    vertical-align: bottom;
+    color: #3a4449;
+    text-align: center;
+}
+
+table td {
+    padding-top: 0;
+    border-left: 1px solid #e1e1e1;
+    border-top: 1px solid #e1e1e1;
+    vertical-align: top;
+}
+
+table td.bold {
+    font-weight: bold;
+}
+
+table td.italic {
+    font-style: italic;
+}
+
+table td.underline {
+    text-decoration: underline;
+}
+
+table td.strikethrough {
+    text-decoration: line-through;
+}
+
+table td.underline.strikethrough {
+    text-decoration: underline line-through;
+}
+
+table td:first-child {
+    border-left: hidden;
+}
+
+table tr:first-child td {
+    border-top: hidden;
+}
+
+/* Images */
+div[data-section-style="11"] {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div[data-section-style="11"][data-section-float="0"] {
+    clear: both;
+    text-align: center;
+}
+
+div[data-section-style="11"][data-section-float="1"] {
+    float: left;
+    clear: left;
+    margin-right: 20px;
+}
+
+div[data-section-style="11"][data-section-float="2"] {
+    float: right;
+    clear: right;
+    margin-left: 20px;
+}
+
+div[data-section-style="11"] img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+hr {
+    width: 70px;
+    margin: 20px auto;
+}
+</style></head><body><h1 id='XZPACAAFAb1'>Rapport IF23</h1>
+
+<h2 id='XZPACAuscL6'>Introduction</h2>
+
+Ce rapport contient la description du projet final de IF23, le cours “Géo-localisation”  de l'Université de Technologie de Troyes. <br/>
+
+Le matériel fourni est une Arduino mini pro, connecté à une puce GPS, une carte SD et un afficheur LCD.<br/>
+
+L'objectif du projet est décomposé en deux parties:<br/>
+
+<div data-section-style='6'><ul id='XZPACAQWNDd'><li id='XZPACAQtzBL' class='' value='1'>La programmation de l'Arduino pour créer différents modes d'enregistrements des positions GPS, et aussi pour transmettre les données enregistrées par port série.
+
+<br/></li><li id='XZPACArwRlI' class=''>Le traitement des données enregistrées, afin de faire des analyses. En particulier sur la précision du GPS.
+
+<br/></li></ul></div>L'ensemble du code source est disponible sur Github en open source. <a href="https://github.com/BenderV/GPS">https://github.com/BenderV/GPS</a><br/>
+
+Il contient le code Arduino, des extraits de données et un Jupyter notebook avec le traitement des données.<br/>
+
+Les analyses sont directement visible sur <a href="http://benderv.com/gps/">http://benderv.com/gps/</a>.<br/>
+
+<br/>
+
+<hr/><h2 id='XZPACATTulj'>Plan</h2>
+
+<div data-section-style='5'><ul id='XZPACA9tRX8'><li id='XZPACAzk8VE' class='' value='1'>Introduction
+
+<br/></li><li id='XZPACA7rQKK' class=''>Plan
+
+<br/></li><li id='XZPACADVyg5' class='parent'>Présentation des fonctionnalités
+
+<br/></li><ul><li id='XZPACA6M27H' class=''>Diagramme des cas d'utilisation
+
+<br/></li><li id='XZPACAyOmLD' class=''>Description du diagramme et présentation du système
+
+<br/></li></ul><li id='XZPACA8puzt' class='parent'>Programmation du système GPS
+
+<br/></li><ul><li id='XZPACAS6Odz' class=''>Libraires utilisées
+
+<br/></li><li id='XZPACA5IawF' class=''>Présentation des fonctions
+
+<br/></li><li id='XZPACAPgqmf' class='parent'>Traitements des données
+
+<br/></li><ul><li id='XZPACAfvtBO' class=''>Présentation
+
+<br/></li><li id='XZPACAQcngr' class=''>Pré-traitements
+
+<br/></li><li id='XZPACA7CnIw' class=''>Data visualisation
+
+<br/></li></ul></ul><li id='XZPACAcJFzZ' class='parent'>Analyse des données
+
+<br/></li><ul><li id='XZPACATgWns' class=''>Méthodologie
+
+<br/></li><li id='XZPACAkNkoM' class=''>Analyse de la précision
+
+<br/></li></ul><li id='XZPACARM3fg' class=''>Reflexions
+
+<br/></li><li id='XZPACAyHisc' class=''>Conclusion
+
+<br/></li></ul></div><hr/><h2 id='XZPACAqPzPv'>I. Présentation des fonctionnalités</h2>
+
+<h3 id='XZPACAZGgLM'>I.1. Diagramme des cas d'utilisation</h3>
+
+<div data-section-style='11' style='max-width:100%'><img src='https://quip.com/blob/XZPAAAkOYL3/QNWeGJt3-xTgceGFs-vhPQ?a=aQ5fxZVDcCFLiC81cbXcyZYXNvf1azWiToZiB85iKdUa' id='XZPACAUNLeY' alt='' width='800' height='447'></img></div><br/>
+
+<br/>
+
+<h3 id='XZPACAWqHMz'>I.2.  Description du diagramme et présentation du système </h3>
+
+<br/>
+
+Le diagramme des cas d'utilisations ci-dessus récapitule le différentes fonctionnalité implémentées dans notre boitier GPS qui sont principalement : <br/>
+
+<div data-section-style='5'><ul id='XZPACAbq6vH'><li id='XZPACAkk9yg' class='' value='1'>L’enregistrement des données sur notre positionnement sous deux modes : mode parcours et mode instantané
+
+<br/></li><li id='XZPACA4UPtR' class=''> La récupération des données enregistré via une liaison série sous un format “csv”.
+
+<br/></li><li id='XZPACAzJZ8y' class=''>La suppression des données enregistrées.
+
+<br/></li><li id='XZPACAlSphf' class=''>L'accès à certaines informations sur le système notamment des informations sur l'état de la batterie et sur l'espace mémoire disponible.
+
+<br/></li></ul></div>Le système (partie hardware) quant à lui est constitué de 4 boutons poussoirs ainsi que d'un afficheur LCD qui permettent d'interagir avec l’utilisateur. Ces boutons permettent à l'utilisateur de naviguer dans le système, le premier a pour fonction particulière de “valider” ou de passer à l'étape suivante et le dernier quant à lui a pour principale fonction le retour à l'étape précédente ou l'annulation d'une action en cours d’exécution. Les autres fonctionnalités de ces boutons ainsi que des 2 autres seront présentées dans la suite de ce document.   <br><br/>
+
+<div data-section-style='11' data-section-float='2' style='max-width:9%'><img src='https://quip.com/blob/XZPAAAkOYL3/T7x0RRDLE6XD4Y_HpKE57Q?a=9XiZwmYJfa8ujPJ7vXmFjQRHql8ekTyGYF0f89phr5Qa' id='XZPACAAEluQ' alt='' width='77' height='50'></img></div>Lorsque le système est mis en marche, l'utilisateur arrive sur une première interface qui lui affiche un message d'accueil , l'état de la pile (en volts) ainsi que l'espace disponible sur la carte SD (en pourcent).  <br/>
+
+<br/>
+
+<div data-section-style='11' data-section-float='2' style='max-width:10%'><img src='https://quip.com/blob/XZPAAAkOYL3/Bs76F1NzVDGKIbcF7HptuA?a=z2IVnahe4MyH1TqMOb1cgfVgBaWEbaDQQkczhJl6axUa' id='XZPACAQ17TR' alt='' width='81' height='48'></img></div><div data-section-style='11' data-section-float='2' style='max-width:10%'><img src='https://quip.com/blob/XZPAAAkOYL3/1AzbiQiOV0IpZP3Wdk0drQ?a=hqqCGnAdvaPkXyytY9qh6NdGq6aLtfzaSNzJhaHjYa4a' id='XZPACAYt93m' alt='' width='81' height='48'></img></div><div data-section-style='11' data-section-float='2' style='max-width:9%'><img src='https://quip.com/blob/XZPAAAkOYL3/VPD332cd1GVdezQEqAEAJQ?a=Ekpq6dW10HDDHZLdVsSzVQ1aoCXue2yHe5ZOx44f3rAa' id='XZPACAdYriv' alt='' width='79' height='44'></img></div>Par la suite pour naviguer dans le système celui doit cliquer sur le premier bouton pour passer cet écran. Ensuite il arrive sur un nouvel écran qui présente les 3 principales fonctionnalités ainsi que les boutons sur lesquels appuyés pour y accéder (l'enregistrement des données GPS, le transfert de celles ci à travers la liaison série ainsi que la suppression des données des anciens enregistrements). L'affichage s'organise comme suit : sur la deuxième ligne de l'écran lcd un message fixe est affiché “press btn” qui invite l'utilisateur à appuyer sur un bouton et sur la deuxième ligne un message défilant qui présente à l'utilisateur les différentes actions correspondantes aux 3 premiers boutons : <br/>
+
+<br/>
+
+<br/>
+
+<div data-section-style='11' data-section-float='2' style='max-width:12%'><img src='https://quip.com/blob/XZPAAAkOYL3/7xwEEsfoLW38sWXz5dWnsQ?a=ccflabtLOzh2iwE1XZm75n2Mop7lCBLUCzZA6bQC2Wsa' id='XZPACA4anrM' alt='' width='103' height='48'></img></div><div data-section-style='11' data-section-float='2' style='max-width:13%'><img src='https://quip.com/blob/XZPAAAkOYL3/WVm1VMGvx8nHltOYFgqeVQ?a=fuk3UEDNk6r2aKjabXD3YdMCl9PZxt7yosX4CyC7kd0a' id='XZPACAf5NwC' alt='' width='105' height='49'></img></div><div data-section-style='11' data-section-float='2' style='max-width:12%'><img src='https://quip.com/blob/XZPAAAkOYL3/mFFl0qd0lr5ycAHEW3wqig?a=jg2Cea1KaX8kOvveNcncxb6DEY1RJq0iAfKK7aYwlPQa' id='XZPACAdxUAX' alt='' width='103' height='47'></img></div> En cliquant sur le  premier bouton comme l'indique l'interface celui-ci accède aux deux modes d'enregistrement : le mode d’enregistrement des données sur un parcours tous les 5 mètres et le mode d'enregistrement des données de positionnement toutes les 5 secondes. En cliquant sur le deuxième bouton l'utilisateur choisit l'id de son parcours et une fois ce choix effectué et validé le transfert sur via la liaison série peut commencer si la carte est branchée. Par la suite les données récupérées peuvent être enregistrées dans un éditeur de texte avec l'extension “.csv” puis soumis à un traitement avec différents logiciels (excel, matlab, octave et dans notre cas nous avons utilisé le logiciel Jupyter avec python pour le traitement de données qui sera présenté par la suite). Enfin en cliquant sur le troisième bouton il accède à une interface qui lui demande s'il veut supprimer les anciennes mesures, il a donc le choix d'appuyer sur le premier bouton afin de confirmer ce choix ou l'annuler en appuyant sur le deuxième bouton.  <br><br><br/>
+
+<br/>
+
+<h2 id='XZPACA0wFjG'><b>II. </b><b>Programmation du système GPS</b></h2>
+
+<br/>
+
+Pour la programmation de notre système GPS nous avons choisi d'utiliser le logiciel Arduino IDE à cause de sa simplicité d'utilisation et pour mieux organiser notre travail nous avons définies des fonctions qui correspondaient toute à une fonctionnalité implémentée (fonction pour l'enregistrement, pour le transfert, pour la suppression des données...). Par ailleurs pour le bon fonctionnement de nos programme nous avons eu à inclure dans notre projet de nombreuses librairies. Dans cette partie nous présenterons d'abord les librairies utilisées ainsi que leur importance et par la suite nous présenterons les fonctions présentes dans notre programme. <br/>
+
+<h3 id='XZPACA1N0aA'>II. 1. Librairies utilisées </h3>
+
+<div data-section-style='5'><ul id='XZPACAnGKbm'><li id='XZPACAQvULq' class='' value='1'>TinyGPSplus : nous avons utilisé cette librairie afin d’extraire du boîtier GPS des données sur notre position (latitude, longitude), sur la date, l'heure, l'altitude, la vitesse de transmission, le nombre de satellites et le hdop. Nous avons privilégié cette librairie par rapport à l'ancienne TinyGPS principalement à cause de sa simplicité d'utilisation.
+
+<br/></li><li id='XZPACA8x4Hd' class=''>LiquidCrystal :  nous avons utilisé  cette librairie afin de communiquer avec l'afficheur LCD de notre boitier GPS
+
+<br/></li><li id='XZPACAaD8vk' class=''>Bounce 2 : qui permet principalement de  s'assurer que seul un seul signal numérique est transmis dans une limite de temps précise lorsqu'on appuie sur un bouton ou un interrupteur  afin que ne s'exécute que l'action qui correspond au bouton sur lequel on a appuyé. Cette librairie permet en quelques sortes d'éviter des problèmes d’exécution dû au bruit qui peut s'ajouter lorsqu'on appuie sur le bouton.
+
+<br/></li><li id='XZPACASnL7r' class=''>SoftwareSerial : qui est la classe qui permet la communication série entre la carte Arduino intégrée dans le boitier et l'ordinateur.
+
+<br/></li><li id='XZPACAbTSUa' class=''>SPI ou Serial Peripheral Interface qui comme son nom l'indique est un protocole qui permet à l'Arduino de communiquer avec un ou plusieurs composants périphériques en la définissant comme composant maître. 
+
+<br/></li></ul></div><br/>
+
+<h3 id='XZPACAecXOl'>II.2. Présentation des fonctions </h3>
+
+<div data-section-style='5'><ul id='XZPACAxUXyY'><li id='XZPACAAoeAG' class='' value='1'>La méthode void create_file() : cette fonction permet comme son nom l'indique de créer le fichier dans lequel on va écrire les données relatives à notre position lors de l'enregistrement. Dans cette fonction nous créons un fichier nommé “gps.csv” au format CSV pour faciliter le traitement avec les différents logiciels (format compatibles avec matlab, excel, python...). Ensuite nous ajoutons une en-tête afin de pouvoir classer les données que va nous fournir le GPS.
+
+<br/></li></ul></div><pre id='XZPACAhk6rO'>void create_file() {<br>    bool add_header = !SD.exists("gps.csv");<br>    file = SD.open("gps.csv", FILE_WRITE);<br>    <br>    if (file) {<br>        if (add_header) {<br>            file.seek(0);<br>            file.println("id,location_lat,location_lng,date_value,time_value,speed_value,course_value,altitude_value,satellites_value,hdop_value");<br>            file.flush();<br>        }<br>        max_len_line = 100;<br>        file.seek(file.size() - max_len_line);<br>        file.readStringUntil('\n').c_str(); // we send the header<br>        while (file.available()) { // careful, the id need to be the first columns<br>            tmp_line_id = file.readStringUntil(separator).toInt();<br>            if (tmp_line_id &gt; LAST_ID){<br>                LAST_ID = tmp_line_id;<br>            }<br>            file.readStringUntil('\n').c_str();<br>        }<br>    } else {<br>        Serial.println("E,open file"); // if the file didn't open, print an error:<br>    }<br>}</pre>
+
+<div data-section-style='5'><ul id='XZPACAw515F'><li id='XZPACAIYxDy' class='' value='1'>La méthode void delete_file() :  qui elle permet la suppression des données enregistrées par exemple quand il y a plus d'espace en mémoire ou qu'on n'a plus besoin des données enregistrées dans le fichier csv (une fois qu'on a déjà fait le transfert des informations enregistrées à travers la liaison série). Dans cette fonction on vérifie simplement si le fichier “gps.csv” existe puis on le supprime et enfin on créé un nouveau fichier de données vide en appelant la fonction create_file().
+
+<br/></li></ul></div><pre id='XZPACAm2O2p'>void delete_file() {<br>    file.close();<br>    if (SD.exists("gps.csv")) {<br>        SD.remove("gps.csv");<br>        lcd.setCursor(0,0);<br>        lcd.print("file del"); <br>    }<br>    create_file();<br>    LAST_ID = 0;<br>}</pre>
+
+<div data-section-style='5'><ul id='XZPACACOI61'><li id='XZPACAyU1DV' class='' value='1'>méthode “void record()” : qui a pour fonction l'écriture dans le fichier “gps.csv” préalablement créé les données GPS fournies par le boîtier à partir d'un objet de la classe TinyGPSplus. Pour faciliter interprétation des logiciels de traitement on utilise la virgule comme séparateur entre deux informations différentes (c'est la séparateur le plus courant).
+
+<br/></li></ul></div><pre id='XZPACAbpFNH'>void record() {<br>    file.print(LAST_ID);<br>    file.write(separator);<br>    file.print(gps.location.lat(), 15);<br>    file.write(separator);<br>    file.print(gps.location.lng(), 15);<br>    file.write(separator);<br>    file.print(gps.date.value());<br>    file.write(separator);<br>    file.print(gps.time.value());<br>    file.write(separator);<br>    file.print(gps.speed.value());<br>    file.write(separator);<br>    file.print(gps.course.value());<br>    file.write(separator);<br>    file.print(gps.altitude.value());<br>    file.write(separator);<br>    file.print(gps.satellites.value());<br>    file.write(separator);<br>    file.println(gps.hdop.value());<br>    file.flush();<br>}</pre>
+
+<div data-section-style='5'><ul id='XZPACArZQQf'><li id='XZPACAKSvSg' class='' value='1'>méthode “void transfert()” : cette méthode permet principalement d'écrire sur le port serie les données enregistrées dans le fichier de données “gps.csv”. Une fois ce transfert éffectué à travers la liaison serie on peut commencer le traitement des données. Dans cette fonction on ouvre le fichier en mode lecture et puis on lit les données qui y sont inscrites et on les restitue sur le port série.
+
+<br/></li></ul></div><pre id='XZPACA5r0xC'>void transfer() {<br>    Serial.write("transfer ");<br>    Serial.println(tmp_id_selected);<br>    file.seek(0);<br>    Serial.println(file.readStringUntil('\n').c_str()); // we send the header<br>    if (tmp_id_selected == 0) { // we transfer the all csv<br>        while (file.available()) {<br>            Serial.write(file.read());<br>        }<br>    } else {<br>        while (file.available()) {<br>            tmp_line_id = file.readStringUntil(separator).toInt();<br>            if (tmp_line_id == tmp_id_selected){<br>                Serial.print(tmp_line_id);<br>                Serial.write(separator);<br>                Serial.println(file.readStringUntil('\n').c_str()); // send the all line<br>            } else {<br>                file.readStringUntil('\n');<br>            }<br>      }   <br>    }<br>}</pre>
+
+<div data-section-style='5'><ul id='XZPACA90aok'><li id='XZPACAlSjEL' class='' value='1'>La méthode int button_pushed() : fonction qui permet de savoir sur quel bouton l'utilisateur a appuyé afin d’exécuter l'action correspondante. Ainsi la fonction retourne un entier qui correspond au bouton appuyé (0 pour le premier bouton, 1 pour le  deuxième, 2 pour le troisième, 3 pour le dernier et  -1 en cas d'erreur).
+
+<br/></li></ul></div><pre id='XZPACAkRXb5'>int button_pushed() {<br>  debounceEN.update();<br>  debounce0.update();<br>  debounce1.update();<br>  <br>  if (debounceEN.read()) {<br>    if (millis() - previous &lt; 500) { // at least 500 ms between each press<br>      return -1;<br>    }<br>    previous = millis();<br><br>    if (!debounce0.read() &amp;&amp; !debounce1.read()) {<br>        return 0; // button 1<br>    } else if (debounce0.read() &amp;&amp; !debounce1.read()) {<br>        return 1; // button 2<br>    } else if (!debounce0.read() &amp;&amp; debounce1.read()) {<br>        return 2; // button 3<br>    } else {<br>        return 3;<br>    }<br>  } else {<br>    return -1;<br>  }<br>}</pre>
+
+<br/>
+
+<br/>
+
+<br/>
+
+<h3 id='XZPACAi9rve'>Traitements des données</h3>
+
+<div data-section-style='5'><ul id='XZPACAF1Tzc'><li id='XZPACA1XmhD' class='' value='1'><b>Présentation</b>
+
+<br/></li></ul></div>Les données sont enregistrées au format CSV sur la carte SD. Pour le transferts, l'Arduino envoie tous les CSV sur le port série, avec une fréquence de 9600 bauds.<br/>
+
+Pour lire le port série, il suffit simplement d'utiliser l'interface Arduino ou il est possible de lancer un “screen” avec la commande:<br/>
+
+<code>screen /dev/cu.usbserial-A10134X1 9600</code><br/>
+
+Il est possible de écrire un simple programme qui récupérerait automatiquement les données reçu sur le port série et qui crée le CSV, cependant puisqu'un simple copier/coller suffit et que la manipulation est pas si courante, ceci n'est pas utile.<br/>
+
+Nous avons choisis Python3 pour le traitement des données. Le langage est simple à apprendre, à lire et possède de nombreuses librairies pour gérer les données. Il est en train de devenir le langage principal pour la “Data Sience”.e<br/>
+
+Nous avons principalement utilisé:<br/>
+
+<div data-section-style='5'><ul id='XZPACAXzcPZ'><li id='XZPACAHIdF8' class='' value='1'><b>Jupyter</b> <b>Notebook</b>: un environnement de développement interactif, pratique pour l'analyse de donnée.
+
+<br/></li><li id='XZPACA6y4yG' class=''><b>Numpy</b>, <b>Scipy</b>: libraires de traitement de donnée.
+
+<br/></li><li id='XZPACASRHFB' class=''><b>Pandas</b>: libraires de gestion et analyse de données labelisé
+
+<br/></li><li id='XZPACAulcrj' class=''><b>Plotly</b>:  une outil d'analyse et de visualisation intéractif
+
+<br/></li><li id='XZPACA7v1kg' class=''><b>Folium</b>: librairie basé sur leaflet pour créer des cartes en Python
+
+<br/></li><li id='XZPACAfVFU4' class=''><b> Nvector</b>: librairie pour les calculs lié au position géographique
+
+<br/></li></ul></div><br/>
+
+<div data-section-style='5'><ul id='XZPACATJY4m'><li id='XZPACAHTdzA' class='' value='1'><b>Pré-traitements</b>
+
+<br/></li></ul></div>Le pré-traitements nécessaire est léger. Tout d'abord, nous avons réduit le bruit en enlevant les mesures “fausses”, qui contiennent au moins une erreur. <br/>
+
+Nous avons retirer les enregistrements ayant ;<br/>
+
+<div data-section-style='5'><ul id='XZPACAUudvO'><li id='XZPACAMA7jd' class='' value='1'>Moins de 2 satellites. (Bizarrement, beaucoup d'enregistrement ont 0 satellite).
+
+<br/></li><li id='XZPACAzqzkC' class=''>Une latitude et/ou une longitude qui tourne autour de 0.
+
+<br/></li><li id='XZPACAkP0da' class=''>Une date ou un temps indéchiffrable.
+
+<br/></li></ul></div>Ensuite, dans le cas d'un enregistrement sur un point fixe, nous retrouvons la position exacte de ce point fixe en faisant la moyenne des positions des enregistrements fiable (ayant 6 satellites ou plus). Ensuite, nous calculons la latitude et longitude en fonction de ce point, et nous transformons ces distances en mètres.<br/>
+
+Nous sommes passés en systèmes de coordonnées cartésiens pour trouver le “centre” de chacun de nos enregistrement fixe. Enfin, nous sommes passé à en coordonnées locale NEU (North, East, Up).<br/>
+
+<div data-section-style='5'><ul id='XZPACAw1gYR'><li id='XZPACAcRw0x' class='' value='1'><b>Data Visualisation</b>
+
+<br/></li></ul></div>Nous avons d'abord affichés les positionnements enregistrés sur une carte pour s'assurer que les positions était plus ou moins correctes.<br/>
+
+Ensuite, en utilisant Pandas et Plotly, nous avons fais plusieurs visualisations:<br/>
+
+<div data-section-style='5'><ul id='XZPACAze66u'><li id='XZPACABMgIt' class='' value='1'>Des histogrammes pour analyser la distribution des positions enregistrées autour du centre.
+
+<br/></li><li id='XZPACASssaG' class=''>Des analyses des moyennes et des écarts types en fonctions du nombre de satellites.
+
+<br/></li><li id='XZPACANt1Q0' class=''>Des série temporelles, analysant plusieurs variables au cours du temps, souvent en utilisant une méthode de lissage, tel que la moyenne glissante, pour réduire le bruit.
+
+<br/></li></ul></div><h2 id='XZPACAXNbPf'>III. Analyse des données</h2>
+
+<h3 id='XZPACA2OX8t'>Méthodologie</h3>
+
+Nous avons commencer par prendre des mesures tout les 5 mètres. Afin, d'avoir des mesures exploitables, nous avons commencé par enregistrer des lignes droites de 100 à 200 mètres. Avec une régression linéaire, nous avons pu retrouver l'angle et la distance de lignes droites. Cependant, nous avons décidé de changer de méthode. En effet, la méthode rendait l'enregistrement de données fastidieux et l'analyse difficile.<br/>
+
+ Au lieu d'enregistrer des lignes droites toutes les 5 mètres, nous enregistrons la position, fixe, toutes les 5 secondes. Cela permet de laisser l'appareil à un endroit pendant plusieurs heures et de collecter des données. Par ailleurs, il est plus simple d'analyser les erreurs de mesures en supposant que la position du GPS est identique au cours d'un enregistrement.<br/>
+
+Nous avions comme objectif d'étudier les performances du GPS sous plusieurs conditions:<br/>
+
+<div data-section-style='5'><ul id='XZPACA8SyU7'><li id='XZPACAvI2J5' class='' value='1'>Le jour et la nuit
+
+<br/></li><li id='XZPACA1O04y' class=''>En fonction de la météo (soleil/nuage/pluie/orage)
+
+<br/></li><li id='XZPACAhbLAi' class=''>En fonction du décors (arbres/bâtiments)
+
+<br/></li><li id='XZPACAVt1Mp' class=''>À deux points fixe dans les mêmes conditions météorologique
+
+<br/></li><li id='XZPACAVPJTi' class=''><b>Sous l'eau?</b>
+
+<br/></li></ul></div><h3 id='XZPACA0Jirs'>Analyse de la précision</h3>
+
+Avant de rentrer dans l'étude de la précision en fonction de certains facteurs, il nous a semblé intéressant d'étudier la distributions générales et autres analyses sur les enregistrements du GPS.<br><br/>
+
+Les études suivantes ont été fais avec le mode n°2 qui enregistre toutes les 5 secondes.<br/>
+
+<br/>
+
+<a href="https://plot.ly/~ben_derv/6/distribution-of-extracted-positions-by-satellites/">https://plot.ly/~ben_derv/6/distribution-of-extracted-positions-by-satellites/</a><br/>
+
+<h3 id='XZPACAC3mIV'>La distribution du nombre de SaTELLITES REçu</h3>
+
+<div data-section-style='11' style='max-width:57%'><img src='https://quip.com/blob/XZPAAAkOYL3/hVkn6ER3I9kBi-FYbH3Fyw?a=mgaApx8KDMGMCfbBis3PrLXrwmTbhaNgkpV3x8b2Rgca' id='XZPACAgVddT' alt='' width='458' height='366'></img></div>Le nombre de satellites captés ressemble à une distribution normale, avec comme médian 7 satellites.<br/>
+
+<br/>
+
+<h3 id='XZPACAs7yXm'>La distribution cumulé en fonction de la distance</h3>
+
+<a href="https://plot.ly/~ben_derv/4/cumulated-of-gps-record-by-distance/">https://plot.ly/~ben_derv/4/cumulated-of-gps-record-by-distance/</a><br/>
+
+<br/>
+
+<div data-section-style='11' style='max-width:100%'><img src='https://quip.com/blob/XZPAAAkOYL3/5dfPq0VXxZ3AqK3qdORQCw?a=JvUyYp77E7T1T7uMmVLPUB307axGgx78c7AWQ1Ecg2wa' id='XZPACAVBUhM' alt='' width='800' height='408'></img></div><br/>
+
+Nous pouvons voir ici clairement que plus le nombre de satellites capté est élevé, plus la distribution est proche du centre. On remarque aussi que l'augmentation des performances est plus important lorsque le nombre de satellites est faible que important. Ainsi, l'amélioration de la distribution est plus importante entre 4 et 5 satellites que entre 8 et 9.<br/>
+
+On remarque une anomalie: la distribution lorsque 10 satellites captés sont reçus. Ceci s'explique simplement par le faible nombre de points enregistré (~50).<br/>
+
+<h3 id='XZPACAIgd9R'>Distributions des positions enregistrées</h3>
+
+<a href="https://plot.ly/~ben_derv/12/distribution-des-positions-enregistrees/">https://plot.ly/~ben_derv/12/distribution-</a>of-recorded-positions<br/>
+
+<div data-section-style='11' style='max-width:100%'><img src='https://quip.com/blob/XZPAAAkOYL3/NDBsquCx3kfxKQHDoCKjsw?a=pngM5GDobcuAIuFzpYBsz0vazAKSEQf1GTTvDjLyq04a' id='XZPACAJ9hdL' alt='' width='800' height='439'></img></div>Avertissement: la distribution peut paraître plus importante sur la longitude que la latitude, mais ceci est simplement un effet d'échelle.<br/>
+
+<br/>
+
+<a href="https://plot.ly/~ben_derv/14/lat-vs-lng/">https://plot.ly/~ben_derv/14/lat-vs-lng/</a><br/>
+
+<div data-section-style='11' style='max-width:63%'><img src='https://quip.com/blob/XZPAAAkOYL3/sT1F98O7nu3KuWoyz1yVWA?a=UjRPD3YR3ereVk8qae0KauGidXRbHuFpCtJbD3gZEl8a' id='XZPACAM94t2' alt='' width='508' height='508'></img></div><h3 id='XZPACAdyWVk'>Analyse de la précision En FONCTION DU NOMBRE DE SATELLITES</h3>
+
+<br/>
+
+La moyenne de HDOP en fonction du nombre de satellites.<br/>
+
+<br/>
+
+<a href="https://plot.ly/~ben_derv/22/mean-of-hdop-by-number-of-satellites/">https://plot.ly/~ben_derv/22/mean-of-hdop-by-number-of-satellites/</a><br/>
+
+<br/>
+
+<div data-section-style='11' style='max-width:64%'><img src='https://quip.com/blob/XZPAAAkOYL3/MBTFgEYFNFWcmJCJghvCkg?a=xZ3gQyha7LUB6J34VWf9xFJlhWlXCZVm5BYau8wocyga' id='XZPACA1prNS' alt='' width='518' height='323'></img></div><br/>
+
+HDOP représente la dilution de précision horizontal. Il est corrélé avec la répartition des satellites captés. Plus les satellites sont éparpillés, plus la précision sera importante. Il est donc logique de prédire que la HDOP sera en moyenne plus important lorsque le nombre de satellites est faible. C'est ce qu'on retrouve sur ce graphique.<br/>
+
+<br/>
+
+<h3 id='XZPACA7alNl'>LATITUDE</h3>
+
+<a href="https://plot.ly/~ben_derv/41/average-latitude-distance-from-center-by-satellites/">https://plot.ly/~ben_derv/41/average-latitude-distance-from-center-by-satellites/</a><br/>
+
+<a href="https://plot.ly/~ben_derv/43/standard-deviation-of-latitude-distance-from-center-by-satellites/">https://plot.ly/~ben_derv/43/standard-deviation-of-latitude-distance-from-center-by-satellites/</a><br/>
+
+<div data-section-style='11' style='max-width:65%'><img src='https://quip.com/blob/XZPAAAkOYL3/FoVbx3OYnkVi7DB1Xr499w?a=bReJxJugaaHWG9EMXelnaVGIZi0z0g4bWZQp8CqDmU4a' id='XZPACASssfi' alt='' width='526' height='421'></img></div><div data-section-style='11' style='max-width:66%'><img src='https://quip.com/blob/XZPAAAkOYL3/8iFCjMc-hUyd0bZ7mx8tDw?a=AZMhBNEhXaKWKkanXF1uCDwqiRx7dbaHPZ6TdCUGh1ka' id='XZPACAtII5g' alt='' width='533' height='427'></img></div><br/>
+
+La moyenne tourne autour de 0, ce qui est normal. On remarque par ailleurs, un écart important au niveau des enregistrements avec 10 satellites. Cela peut être induit par le faible nombre de valeur prise dans ce cas.<br/>
+
+L'évolution de l'écart-type (Standard deviation) montre bien que la précision du GPS augmente avec le nombre de satellites.<br/>
+
+<h3 id='XZPACAs1fyj'>LONGITUDE</h3>
+
+<a href="https://plot.ly/~ben_derv/45/average-longitude-distance-from-center-by-satellites/">https://plot.ly/~ben_derv/45/average-longitude-distance-from-center-by-satellites/</a><br/>
+
+<a href="https://plot.ly/~ben_derv/47/std-of-longitude-distance-from-center-by-satellites/">https://plot.ly/~ben_derv/47/std-of-longitude-distance-from-center-by-satellites/</a><br/>
+
+<div data-section-style='11' style='max-width:66%'><img src='https://quip.com/blob/XZPAAAkOYL3/U228zbHpZdDIuDpegWvO0g?a=FlDEuPUKE9hNtd50UDQmnVQK0fN5UzWIVjL59LqxLWga' id='XZPACAbMtRV' alt='' width='529' height='423'></img></div><div data-section-style='11' style='max-width:64%'><img src='https://quip.com/blob/XZPAAAkOYL3/NIlrmveaSPVtNRQhUvxPVA?a=lKrD4f5AXubIcEX0stiYk0a1UiZHZOPuiGQXaJUGOeka' id='XZPACA2HAOJ' alt='' width='519' height='416'></img></div><br/>
+
+<br/>
+
+La moyenne tourne autour de 0, ce qui est à nouveau normal. On remarque à nouveau un écart important au niveau des enregistrements avec 10 satellites.<br/>
+
+L'évolution de l'écart-type (standard deviation) montre à nouveau que la précision du GPS augmente avec le nombre de satellites.<br/>
+
+Point intéressant, l'écart type de la longitude est inférieur à l'écart-type de la latitude.<br/>
+
+<h3 id='XZPACAlbwnN'>ALTITUDE</h3>
+
+<a href="https://plot.ly/~ben_derv/49/altitude-mean-by-number-of-satellites-meters/">https://plot.ly/~ben_derv/49/altitude-mean-by-number-of-satellites-meters/</a><br/>
+
+<a href="https://plot.ly/~ben_derv/51/altitude-std-by-number-of-satellites-meters/">https://plot.ly/~ben_derv/51/altitude-std-by-number-of-satellites-meters/</a><br/>
+
+<div data-section-style='11' style='max-width:62%'><img src='https://quip.com/blob/XZPAAAkOYL3/2lPjUnHf9Y8et-dMyrUBVQ?a=sS4Vgdn1l7SMjlqdAJLxaUenaPtu04WO71ktXZaStoka' id='XZPACAzDuMm' alt='' width='496' height='397'></img></div><br/>
+
+Le graphisme représente la distance moyenne en fonction du nombre de satellites captés avec l'altitude estimé.<br/>
+
+<div data-section-style='11' style='max-width:62%'><img src='https://quip.com/blob/XZPAAAkOYL3/6d_d4bYafOYi1tfpRtfyMA?a=Dbcru0Kv9gaPG0vCIsyVvnk3nTy04kvcQnqpz72Lddsa' id='XZPACAqNNZV' alt='' width='496' height='397'></img></div> La dérivation standard baisse une peu avec le nombre de satellite mais pas de façon importante. Cela peut s'expliquer car la répartition des satellites sur l'axe “up” /  l'altitude est faible.<br/>
+
+<hr/><h3 id='XZPACANv1d9'>Cas intéressants</h3>
+
+<a href="https://plot.ly/~ben_derv/34/satellites-values-by-time-simple-moving-averages/">https://plot.ly/~ben_derv/34/satellites-values-by-time-simple-moving-averages/</a><br/>
+
+<br/>
+
+<div data-section-style='11' style='max-width:100%'><img src='https://quip.com/blob/XZPAAAkOYL3/OX18YDWU6seTAmVHJerAQw?a=LGqaw9r0R2va2voFGYNtFBd5pKOF5QanpocEEFik4Hga' id='XZPACA4sCIM' alt='' width='800' height='420'></img></div><br/>
+
+Voici le nombre de satellites pris au cours du temps, traité avec une moyenne glissante. Afin de pouvoir affiché le graphique, nous avons d'abord extrait un point sur dix. Ensuite, nous avons appliqué deux moyennes glissantes, une de 10, et une de 100. Nous pouvons voir que la réception  du signal des satellites varies au cours du temps.<br/>
+
+<br/>
+
+<hr/><div data-section-style='11' style='max-width:100%'><img src='https://quip.com/blob/XZPAAAkOYL3/vVZPkYEugyY_cU4szgafMQ?a=P4XTautxnR9K4mk1jgsaNnQJZAWiQvQ8T7wJ2e3SAAYa' id='XZPACApYn9Y' alt='' width='800' height='439'></img></div>Ce graphique représente la distribution autour du centre lors d'un prise dans le mode 1. C'est à dire que le GPS enregistre les données dès lors qu'il y a plus de 5 mètres entre deux points captés. L'enregistrement à été fais de nuit, lors d'une pluie troyenne. La fréquence des enregistrements est d'environ un enregistrement toutes les 4 secondes.<br/>
+
+<br/>
+
+Ce qui est très intéressant, c'est les lignes visibles  lorsque le nombre de satellites est de 3 ou 4. Cela est sûrement dû à un faible répartition des satellites, qui rend l'incertitude sur des axes précis, très important.<br/>
+
+<br/>
+
+<hr/>Auto-corrélations - <a href="https://plot.ly/~ben_derv/53/auto-correlations/">https://plot.ly/~ben_derv/53/auto-correlations/</a><br/>
+
+<div data-section-style='11' style='max-width:100%'><img src='https://quip.com/blob/XZPAAAkOYL3/TZ5jLCqHTbiVXZmiwAzDmg?a=H8uJZSUnLl7fwePCcplstyPa86LIsmSP6MqnaPhOrFwa' id='XZPACA96xQH' alt='' width='800' height='439'></img></div>Nous avons cherché à étudier l'auto-corrélation entre les différentes informations du GPS au cours du temps. Le schéma semble indiquer qu'il y a très peu de corrélation entre les enregistrements, à la différences des GPS différentiels. <br/>
+
+<h2 id='XZPACAfPKyV'>Reflexions</h2>
+
+Il y a beaucoup d'expérience que nous avons pas fais par manque de temps ou d'équipements. Nous avons pas étudié les précisions du GPS en fonction de la météo ou de la température car nous avons pas réussi à trouver des données fiables sur la pluviométrie et la météorologie passé...<br/>
+
+Par ailleurs, il serait intéressant d'enregistrer des données dans des conditions extrêmes; blizzard, sous-l'eau, etc.<br/>
+
+Par ailleurs, nous aurons bien aimé comparer le nombre de satellites captés avec la position des satellites à un moment donnée. <br/>
+
+Nous avons pas accès au VDOP, mais en mesurant l'écart-type, il nous est possible d'estimer ça valeur.<br/>
+
+<br/>
+
+Enfin, nous avions écris le code Arduino dans l'idée de la simplicité et de la rapidité de développement. Le code n'est cependant pas optimisé pour être facile à modifier ou à étendre. Un des prochain travail est de passer à un système de machine à état pour la navigation et  d'enregistrer plus de d'informations du GPS (par exemple le noms des satellites).<br/>
+
+Nous pouvons aussi développer un programme pour récupérer automatiquement les données envoyées par le port série.<br/>
+
+<h2 id='XZPACAorJsJ'>Conclusion</h2>
+
+Pour conclure ce projet nous a permis de mieux prendre en main le boîtier GPS, d’acquérir des compétences en programmation principalement  sur Arduino mais aussi sur Python qui est le langage sur lequel nous avons effectué nos traitements et nos analyses de données. Nous pouvons donc tirer de ces différentes  analyses que la précision du GPS varie en fonction du nombre de satellites (plus le nombre de satellites est grand plus la précision des mesures sera meilleure, nous l'avons vu notamment en comparant les différents écarts type de mesure des paramètres relatifs au positionnement   mais aussi en comparant le HDOP en fonction du nombre de satellites). Nous n'avons cependant pas pu mené à terme toutes les analyses que nous avions prévues au départ notamment le calcul du VDOP étant donné que notre GPS ne nous fournissaient pas de données sur les pseudo-distances afin qu'on puisse remonter à l'écart type des bruits de mesure. Par ailleurs nous n'avons pas pu accéder aux données exactes sur les températures des différents jours pendant lesquels nous avons effectué nos enregistrement, ce qui nous a empêché d'établir ou non une corrélation entre la donnée de la température sur la précision des mesures GPS.  <br/>
+
+<br/>
+
+<br/>
+
+</body></html>
