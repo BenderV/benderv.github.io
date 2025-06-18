@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+</head>
+<body>
+
+# Paper Review : “Manipulation of Voting Schemes: A General Result (2975, 1973)” by Allan Gibbard 
+
+> The paper published by Allan Gibbard in 1973 proved that, in a reasonable* rank-order voting system, there will always be a situation where a player can select his prefered outcome by lying on his preference order.
+
+
+0. Introduction
+1. Example of situation where dishonest vote (aka, lying) pay.
+2. Details of the conjecture
+3. Importance of the conjecture
+4. Overview of Gibbard proof
+
+
+## Introduction 
+
+To explain the conjecture, we will present first an example of a dishonest vote which allow the voter to win. Then, we will explain the details of the conjecture and why it is an important result. We finally give a quick explication of the proof presented in the paper.
+
+## Example of situation where dishonest vote, that is lying, pay.
+
+Situation:
+
+- 3 canditates (A, B, C)
+- 15 voters
+
+Honest preferences:
+
+ - B>C>A: 8 voters (group X)
+ - A>B>C: 5 voters (group Y)
+ - C>A>B: 6 voters (group Z)
+
+Winner: B
+
+
+First of all, we note that there is no obvious winner. A is prefered to B with 11/19 votes, but C is prefered to A with 14/19 votes and B is prefered to C with 13/19 votes. This is called a Condorcet cycle.
+If we use the Instant Runoff as our election method, then, B should be the winner. (as in most election methods).
+
+Now, let's image that knowing what other voters play, the group Z, lie. They changes their vote from "C>A>B" to "A>C>B"
+
+Honest preferences:
+
+- B>C>A: 8 voters (group X)
+- A>B>C: 5 voters (group Y)
+
+Dishonest preferences:
+
+- A>C>B: 6 voters (group Z)
+
+Winner: A
+
+Now, under this new system, A is clearly the winner, most of the people prefer A over B or C, this is a Condorcet winner.
+
+By lying, the group Z manages to change the result from B to A, which is, according to them, a better candidate. They have manipulated the result of the election by lying on their preferences.
+
+It's important to note that not all situations allow for a manipulation by one or more groups of voters. For example, if X had an absolute majority, then even together, the group Y and Z would be unable to manipulate the result of the election.
+
+## Details of the conjecture
+
+First, the conjecture only work on rank-order voting system. This mean that the conjecture is not proved for other type of voting system. For example, the conjecture is false for some range-voting type system.
+
+Secondly, the conjecture specify some conditions for the voting system. This is what we called "reasonable" earlier. 
+
+Voter system conditions:
+
+- There are at least three candidates running.
+- Pareto Efficiency: if every voter ranks X top, then X wins the election.
+- There is no "dictator": no single voter possesses the power to always determine the group's preference
+- Deterministic voting system: its decision about who wins is based purely on the votes, not on random chance.
+
+The first condition is straightforward. If we only have two candidates, then if the loosing group change is vote, it strengh-end (?) the result of the adversary. Manipulations are only possible because of the existence of condorcet cycles.
+
+The second and third conditions is an "obvious" requirement for a normal voter-sytem. 
+
+Finally, the voter system has to be deterministic, that is, the result shouldn't be based on random. An example of a random system would be "select one voter by random and select his top choice". This requirement is created to be able to work with the concept of manipulation. While it's certainly possible to manipulate chance of winning a non-deterministic election, it's harder to mathematically conceptualize it.
+
+The conjecture is close to the famous "Arrow's impossibility theorem". Indeed, the paper use the Arrow's impossibility theorem to prove of the conjecture. However, while the conjecture presented focus on singler-winner voting system and about the impossibility to avoid cheating, the Arrow's impossibility theorem focus on ranked preferences and the impossibility to have a complete and transitive ranking system while requirying a set of criteras.
+
+## Importance of the conjecture
+
+This paper is considered as one of the most important paper on voting system. It has been cited almost 3000  times by other scientifics publications.
+
+It's currently named as the Gibbard–Satterthwaite theorem, because the same conjecture was also proved by Satterthwaite in his paper "Strategy-Proofness and Arrow’s Conditions: Existence and Correspondence Theorems for Voting Procedures and Social Welfare Functions*" received in May 21, 1973 and revised December 12, 1974.
+
+The direct consequences of the projecture are simple: people are incentivize to manipulate voting result by lying, which can't be detected. The implication of this are important: when someone manipulate a voting result, the majority is worst-off, except for the lier.
+
+However, the indirect consequences are as important and visible in real life:
+
+### Compromises
+
+It can push the "winner" group to make compromise with the potential cheaters, making the majority worse.
+
+Honest preferences:
+
+- B>C>A: 8 voters (group X)
+- A>B>C: 5 voters (group Y)
+
+Dishonest preferences:
+
+- A>C>B: 6 voters (group Z, honest: C>A>B) 
+
+Winner: A
+
+The only way for the group X to avoid this result is to make a "pact" with the group Z, and declare that we will vote for C.
+By making this move, C is elected, but then, the result is also "sub-optimal", since a majority of people prefer A then B.
+
+Honest preferences:
+
+- A>B>C: 5 voters (group Y)
+- C>A>B: 6 voters (group Z)
+
+Dishonest preferences:
+
+- C>B>A: 8 voters (group X)
+
+Winner: C
+
+If we see A, B or C not as candidates but political choices, then a real life example of this would be when a front-runner make an agreement with a smaller party to secure their election. Even though it's possible that the majority of voters disagree on this.
+
+### Two party
+
+For an electoral system such that only the winner is elected, we can see that non front-runners have an incentive to make compromise with one of the two front-runners. This create a devil cycle where the third parties have less chance to win, thus maintaining a two party system with only two front-runners.
+
+Another example; with an electoral system that only take into account the favorite candidate of every preferences and then choose the most popular one, people will have an incentive to vote for the two front-runners, as the vote for any other candidates will be like a blank vote.
+
+## Overview of Gibbard proof
+
+
+The proof in the paper is complicated. The idea behind is to prove Vickrey conjecture on manipulability. 
+The paper prove that to have avoid manipulation, the voter system need two constraints: "Independence of irrelevant alternatives" and "Positive association of social and individual values". Theses two constraints are present in the Arrow's impossibility theorem. Since the Arrow's impossibility theorem prove that not all of it's constraints are jointly compatible, Gibbard prove that manipulability is not avoidable in any voter system which follow the others constraints of the Arrow's impossibility theorem, that is, Pareto Efficiency, Non-dictatorship and Deterministic system (a subset of "Unrestricted domain").
+
+</body>
+
+<style class="fallback">
+  body {
+    font-family: monospace
+  }
+  img, table {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  table {
+    display: table;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .half {
+    float: left;
+    width: 50%;
+  }
+  .break {
+    page-break-after: always;
+  }
+  h6 {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+</style>
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style>
+<script src="https://casual-effects.com/markdeep/latest/markdeep.min.js"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
+
+<script>
+  function ready(fn) {
+    if (document.readyState != 'loading'){
+      setTimeout(function() { fn; }, 100);
+    } else {
+      document.addEventListener('DOMContentLoaded', setTimeout(fn, 100));
+    }
+  }
+  function remove() {
+    document.querySelectorAll('.markdeepFooter')[0].style.display = 'none'
+  }
+  ready(remove);
+  
+</script>
