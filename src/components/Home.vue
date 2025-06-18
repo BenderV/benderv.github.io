@@ -3,7 +3,6 @@
   <div class="pure-u-0 pure-u-md-1-5"></div>
   <div class="pure-u-1 pure-u-md-3-5 l-box">
     <h3>About me</h3>
-    <br/>
     <p>Engineer. Expertise in Tech, Data, Deep Learning.<br/></p>
 
     <h3>Experiences</h3>
